@@ -10,14 +10,14 @@ class MediaController extends Controller
     public function defaultMedia() {
         return view('home', [
             "title" => "Media",
-            "md" => Medias::getAll()
+            "md" => Medias::all()
         ]);
     }
 
-    public function showMedia($media_linker) {
+    public function showMedia(Medias $media_id) {
         return view('media', [
             "title" => "Media Post",
-            "md" => Medias::get_specified_media($media_linker)
+            "md" => $media_id
         ]);
     }
 }

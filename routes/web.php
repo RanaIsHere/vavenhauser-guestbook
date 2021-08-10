@@ -24,4 +24,4 @@ Route::get('/', function () {
 
 Route::get('media/', [MediaController::class, "defaultMedia"]);
 
-Route::get('media/{media_linker}', [MediaController::class, "showMedia"]);
+Route::get('media/{media_id:media_linker}', [MediaController::class, "showMedia"]);
