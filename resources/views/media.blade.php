@@ -4,7 +4,11 @@
     <div class="bg-dark text-light text-center">
         <div class="pt-5 mb-5 pb-5">
             <h1> {{ $md->media_title }} </h1>
+            <p> Category: <a href="/tags/{{ $md->category->media_category_linker }}"> {{ $md->category->media_category_name }} </a> </p>
+
                  {!! $md->media_message !!}
+
+
             <div class="d-flex justify-content-center">
                 <img src="../images/{{ $md->media_image }}" width="1024px" height="768px">
             </div>
