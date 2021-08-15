@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand navbar-dark bg-primary">
+<div class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
     <div class="container-fluid">
         <a href="/" class="navbar-brand"> Vauvenhauser Open House</a>
 
@@ -30,6 +30,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('register') ? 'active' : '' }}" href="/register">Register</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('messaging') ? 'active' : '' }}" href="/messaging">Messaging</a>
                 </li>
             </ul>
         </div>

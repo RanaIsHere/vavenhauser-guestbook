@@ -4,6 +4,7 @@ use App\Http\Controllers\MediaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Medias;
 use App\Models\Category;
@@ -27,6 +28,8 @@ Route::get('/', function () {
      ]);
 });
 
+Route::get('/messaging', [MessageController::class, 'defaultMessage']);
+
 Route::get('/guestbook', [GuestController::class, 'defaultGuest']);
 Route::post('/guestbook', [GuestController::class, 'createBook']);
 
@@ -45,7 +48,7 @@ Route::get('/tag', function () {
         'title' => 'Post Tags List',
         'tag' => Category::all()
     ]);
-}); 
+});
 
 // Route::get('tags/{category:media_category_linker}', function (Category $category) {
 //     return view('home', [
