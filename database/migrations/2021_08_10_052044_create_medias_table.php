@@ -16,11 +16,12 @@ class CreateMediasTable extends Migration
         Schema::create('medias', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
+            $table->foreignId('user_id');
             $table->text('media_title');
             $table->text('media_linker');
             $table->text('media_preview');
             $table->text('media_message');
-            $table->string('media_image');
+            $table->string('media_image')->default('img_2.jpg');
             $table->timestamp('published_on')->nullable();
             $table->timestamps();
         });

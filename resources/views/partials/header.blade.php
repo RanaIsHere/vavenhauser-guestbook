@@ -13,7 +13,23 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link {{ Request::is('tag') ? 'active' : '' }}" href="/tag">Tags</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('media') ? 'active' : '' }}" href="/media">Media</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('guestbook') ? 'active' : '' }}" href="/guestbook">Guestbook</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('register') ? 'active' : '' }}" href="/register">Register</a>
                 </li>
             </ul>
         </div>
