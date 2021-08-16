@@ -35,7 +35,13 @@ Route::get('/guestbook', [GuestController::class, 'defaultGuest']);
 Route::post('/guestbook', [GuestController::class, 'send']);
 
 Route::get('/admin', [AdminController::class, 'defaultAdmin']);
-//Route::get('/admin?d=users', [AdminController::class, 'defaultUsers']);
+
+//TODO get verification from session
+Route::get('/delete', [AdminController::class, 'defaultAdmin']);
+Route::post('/delete', [AdminController::class, 'delete']);
+
+Route::get('/update', [AdminController::class, 'defaultAdmin']);
+Route::post('/update', [AdminController::class, 'update']);
 
 Route::get('media/', [MediaController::class, "defaultMedia"]);
 

@@ -18,4 +18,37 @@ class AdminController extends Controller
             'gb_guestbooks' => Guestbook::all()
         ]);
     }
+
+    public function delete(Request $request)
+    {
+//        return $request->all();
+
+        if ($request->has(['delete', 'd'])) {
+            $id = $request->delete;
+
+            switch ($request->d)
+            {
+                case('users'):
+                    User::destroy($id);
+                case('medias'):
+                    Medias::destroy($id);
+                case('guestbooks'):
+                    Guestbook::destroy($id);
+            }
+        } else {
+            return redirect()->back();
+        }
+
+        return redirect('/admin?d=' . $request->d . '');
+    }
+
+    public function update(Request $request)
+    {
+//        TODO add a proper update page
+        if ($request->has(['update', 'd'])) {
+            return 'ERROR 404 NOT FOUND, Reason: For now, this feature is unavailable.';
+        } else {
+            return redirect()->back();
+        }
+    }
 }

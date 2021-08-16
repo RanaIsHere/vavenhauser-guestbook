@@ -35,27 +35,49 @@
                 <div class="container">
                     <h1>Users</h1>
 
-                    <table class="table table-bordered table-sm">
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Created At</th>
-                        </tr>
-
-                        @foreach($gb_users as $data)
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm">
                             <tr>
-                                <td> {{ $data->id }} </td>
-                                <td> {{ $data->name }} </td>
-                                <td> {{ $data->username }} </td>
-                                <td> {{ $data->email }} </td>
-                                <td> {{ $data->password }} </td>
-                                <td> {{ $data->created_at }} </td>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
                             </tr>
-                        @endforeach
-                    </table>
+
+                            @foreach($gb_users as $data)
+                                <tr>
+                                    <td> {{ $data->id }} </td>
+                                    <td> {{ $data->name }} </td>
+                                    <td> {{ $data->username }} </td>
+                                    <td> {{ $data->email }} </td>
+                                    <td> {{ $data->password }} </td>
+                                    <td> {{ $data->created_at }} </td>
+                                    <td>
+                                        <form action="/delete" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="delete" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
+                                        </form>
+
+                                        <form action="/update" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="update" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-primary w-100"> Update </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             @endif
 
@@ -63,27 +85,49 @@
                 <div class="container">
                     <h1>Medias</h1>
 
-                    <table class="table table-bordered table-sm">
-                        <tr>
-                            <th>Id</th>
-                            <th>C-Id</th>
-                            <th>U-Id</th>
-                            <th>Title</th>
-                            <th>Updated At</th>
-                            <th>Created At</th>
-                        </tr>
-
-                        @foreach($gb_medias as $data)
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm">
                             <tr>
-                                <td> {{ $data->id }} </td>
-                                <td> {{ $data->category_id }} </td>
-                                <td> {{ $data->user_id }} </td>
-                                <td> {{ $data->media_title }} </td>
-                                <td> {{ $data->updated_at }} </td>
-                                <td> {{ $data->created_at }} </td>
+                                <th>Id</th>
+                                <th>C-Id</th>
+                                <th>U-Id</th>
+                                <th>Title</th>
+                                <th>Updated At</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
                             </tr>
-                        @endforeach
-                    </table>
+
+                            @foreach($gb_medias as $data)
+                                <tr>
+                                    <td> {{ $data->id }} </td>
+                                    <td> {{ $data->category_id }} </td>
+                                    <td> {{ $data->user_id }} </td>
+                                    <td> {{ $data->media_title }} </td>
+                                    <td> {{ $data->updated_at }} </td>
+                                    <td> {{ $data->created_at }} </td>
+                                    <td>
+                                        <form action="/delete" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="delete" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
+                                        </form>
+
+                                        <form action="/update" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="update" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-primary w-100"> Update </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             @endif
 
@@ -91,27 +135,49 @@
                 <div class="container">
                     <h1>Guestbooks</h1>
 
-                    <table class="table table-bordered table-sm">
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Message</th>
-                            <th>Created At</th>
-                        </tr>
-
-                        @foreach($gb_guestbooks as $data)
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm">
                             <tr>
-                                <td> {{ $data->id }} </td>
-                                <td> {{ $data->name }} </td>
-                                <td> {{ $data->email }} </td>
-                                <td> {{ $data->phone }} </td>
-                                <td> {{ $data->message }} </td>
-                                <td> {{ $data->created_at }} </td>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Message</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
                             </tr>
-                        @endforeach
-                    </table>
+
+                            @foreach($gb_guestbooks as $data)
+                                <tr>
+                                    <td> {{ $data->id }} </td>
+                                    <td> {{ $data->name }} </td>
+                                    <td> {{ $data->email }} </td>
+                                    <td> {{ $data->phone }} </td>
+                                    <td> {{ $data->message }} </td>
+                                    <td> {{ $data->created_at }} </td>
+                                    <td>
+                                        <form action="/delete" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="delete" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
+                                        </form>
+
+                                        <form action="/update" method="post">
+                                            @csrf
+
+                                            <input type="hidden" name="update" value="{{$data->id}}">
+                                            <input type="hidden" name="d" value="{{ request('d') }}">
+
+                                            <button type="submit" class="btn btn-primary w-100"> Update </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             @endif
         </div>
