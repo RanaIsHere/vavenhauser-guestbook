@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
-    public function defaultIndex() 
+    public function defaultIndex()
     {
         return view('login.index', ["title" => "Login Page"]);
     }
@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         $validatedData = $request->validate([
             'username' => ['required', 'max:255'],
-            'password' => ['required', 'min: 3', 'max: 255'] 
+            'password' => ['required', 'min: 3', 'max: 255']
         ]);
 
         if ($registeredData->count() == null) {
@@ -38,6 +38,6 @@ class LoginController extends Controller
             ]);
         }
 
-        return redirect('/media');
+        return redirect('/admin');
     }
 }

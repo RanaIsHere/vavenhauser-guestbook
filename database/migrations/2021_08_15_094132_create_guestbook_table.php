@@ -13,11 +13,11 @@ class CreateGuestbookTable extends Migration
      */
     public function up()
     {
-        Schema::create('guestbook', function (Blueprint $table) {
+        Schema::create('guestbooks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->text('phone')->unique();
+            $table->text('phone');
             $table->text('message');
             $table->timestamps();
         });

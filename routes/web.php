@@ -31,7 +31,9 @@ Route::get('/', function () {
 Route::get('/messaging', [MessageController::class, 'defaultMessage']);
 
 Route::get('/guestbook', [GuestController::class, 'defaultGuest']);
-Route::post('/guestbook', [GuestController::class, 'createBook']);
+Route::post('/guestbook', [GuestController::class, 'send']);
+
+Route::get('/admin', [AdminController::class, 'defaultAdmin']);
 
 Route::get('media/', [MediaController::class, "defaultMedia"]);
 
@@ -49,18 +51,3 @@ Route::get('/tag', function () {
         'tag' => Category::all()
     ]);
 });
-
-// Route::get('tags/{category:media_category_linker}', function (Category $category) {
-//     return view('home', [
-//         'title' => 'Media Category: ' . $category->media_category_name,
-//         'md' => $category->medias->load('category', 'user'),
-//         // 'category' => $category->media_category_name,
-//     ]);
-// });
-
-// Route::get('users/{user:username}', function (User $user) {
-//     return view('home', [
-//         'title' => 'User: ' . $user->username,
-//         'md' => $user->medias->load('category', 'user')
-//     ]);
-// });

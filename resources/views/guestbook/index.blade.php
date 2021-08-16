@@ -6,8 +6,16 @@
 
             <h2 class="text-primary"> Guestbook </h2>
 
+            @if (session()->has('sent'))
+                <div class="alert alert-success mt-5" role="alert">
+                    {{ session('sent') }}
+                </div>
+            @endif
+
             <div class="container w-50 text-light">
                 <form action="/guestbook" method="post">
+                    @csrf
+
                     <div class="form-group mb-5">
                         <label for="full_name"> Full Name </label>
                         <input type="text" name="name" id="full_name" class="form-control">
