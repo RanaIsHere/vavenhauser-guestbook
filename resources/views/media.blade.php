@@ -6,14 +6,14 @@
             <h1> {{ $md->media_title }} </h1>
             <p> Made by <a href="/media?user={{ $md->user->username }}" class="text-muted text-decoration-none"> {{ $md->user->name }} </a> </p>
             <p> Category: <a class="text-decoration-none" href="/media?category={{ $md->category->media_category_linker }}"> {{ $md->category->media_category_name }} </a> </p>
-            
+
             <div class="container" style="width: 80%">
                  {!! $md->media_message !!}
             </div>
 
             <div class="d-flex justify-content-center">
                 {{-- <img src="../images/{{ $md->media_image }}" width="1024px" height="768px"> --}}
-                <img src="https://source.unsplash.com/1024x768/?{{ $md->category->media_category_name }}">
+                <img class="img-fluid" src="https://source.unsplash.com/1024x768/?{{ $md->category->media_category_name }}">
             </div>
         </div>
 

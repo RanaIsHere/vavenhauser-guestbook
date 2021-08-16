@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+<div class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container-fluid">
         <a href="/" class="navbar-brand"> Vauvenhauser Open House</a>
 

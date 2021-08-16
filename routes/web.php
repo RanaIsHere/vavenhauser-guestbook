@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Medias;
 use App\Models\Category;
@@ -34,6 +35,7 @@ Route::get('/guestbook', [GuestController::class, 'defaultGuest']);
 Route::post('/guestbook', [GuestController::class, 'send']);
 
 Route::get('/admin', [AdminController::class, 'defaultAdmin']);
+//Route::get('/admin?d=users', [AdminController::class, 'defaultUsers']);
 
 Route::get('media/', [MediaController::class, "defaultMedia"]);
 

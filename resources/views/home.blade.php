@@ -53,16 +53,16 @@
                 <div style="margin-bottom: 150px;">
                     <h1> <a class="text-decoration-none" href="../media/{{ $data->media_linker }}"> {{ $data->media_title }} </a> </h1>
                     <p> Made by <a href="/media?user={{ $data->user->username }}" class="text-muted text-decoration-none"> {{ $data->user->name }} </a> since {{ $data->created_at->diffForHumans() }} </p>
-                    <p> Category: <a class="text-decoration-none" href="/media?category={{ $data->category->media_category_linker }}"> {{ $data->category->media_category_name }} </a> </p> 
+                    <p> Category: <a class="text-decoration-none" href="/media?category={{ $data->category->media_category_linker }}"> {{ $data->category->media_category_name }} </a> </p>
                     <h5> {{ $data->media_preview }}</h5>
                     {{-- <img src="../images/{{ $data->media_image }}" width="1024px" height="768px"> --}}
-                    <img src="https://source.unsplash.com/1024x768/?{{ $data->category->media_category_name }}">
+                    <img class="img-fluid" src="https://source.unsplash.com/1024x768/?{{ $data->category->media_category_name }}">
                 </div>
             @endforeach
         @else
             <p>No media has been found.</p>
         @endif
-            
+
         <div class="container d-flex justify-content-center">
             {{ $md->links() }}
         </div>
