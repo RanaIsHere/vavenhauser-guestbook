@@ -65,7 +65,7 @@
                                             <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
                                         </form>
 
-                                        <form action="/update" method="post">
+                                        <form action="/update" method="get">
                                             @csrf
 
                                             <input type="hidden" name="update" value="{{$data->id}}">
@@ -115,7 +115,7 @@
                                             <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
                                         </form>
 
-                                        <form action="/update" method="post">
+                                        <form action="/update" method="get">
                                             @csrf
 
                                             <input type="hidden" name="update" value="{{$data->id}}">
@@ -165,7 +165,7 @@
                                             <button type="submit" class="btn btn-danger mb-2 w-100"> Delete </button>
                                         </form>
 
-                                        <form action="/update" method="post">
+                                        <form action="/update" method="get">
                                             @csrf
 
                                             <input type="hidden" name="update" value="{{$data->id}}">

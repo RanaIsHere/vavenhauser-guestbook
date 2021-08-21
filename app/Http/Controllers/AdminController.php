@@ -42,13 +42,42 @@ class AdminController extends Controller
         return redirect('/admin?d=' . $request->d . '');
     }
 
+    public function defaultUpdate(Request $request)
+    {
+        return view('admin.update', [
+            'title' => 'Edit Menu',
+            'update' => $request->update,
+            'd' => $request->d
+        ]);
+    }
+
     public function update(Request $request)
     {
-//        TODO add a proper update page
         if ($request->has(['update', 'd'])) {
-            return 'ERROR 404 NOT FOUND, Reason: For now, this feature is unavailable.';
+            $id = $request->update;
+
+            switch ($request->d)
+            {
+                case('users'):
+                    $validatedData = $request->only('name', 'username', 'email');
+
+                    User::where('id', $id)->update(['name' => $request->name, 'username' => $request->username, 'email' => $request->email]);
+                    return redirect('/admin?d=' . $request->d . '');
+                case('medias'):
+                    $validatedData = $request->only('category_id', 'media_title');
+
+                    Medias::where('id', $id)->update(['category_id' => $request->category_id, 'media_title' => $request->media_title]);
+                    return redirect('/admin?d=' . $request->d . '');
+                case('guestbooks'):
+                    $validatedData = $request->only('name', 'email', 'phone', 'message');
+
+                    Guestbook::where('id', $id)->update(['name' => $request->name, 'email' => $request->email, 'phone' => $request->phone, 'message' => $request->message ]);
+                    return redirect('/admin?d=' . $request->d . '');
+            }
         } else {
             return redirect()->back();
         }
+
+//        return redirect('/admin?d=' . $request->d . '');
     }
 }

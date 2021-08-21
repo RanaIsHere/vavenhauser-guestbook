@@ -40,7 +40,7 @@ Route::get('/admin', [AdminController::class, 'defaultAdmin']);
 Route::get('/delete', [AdminController::class, 'defaultAdmin']);
 Route::post('/delete', [AdminController::class, 'delete']);
 
-Route::get('/update', [AdminController::class, 'defaultAdmin']);
+Route::get('/update', [AdminController::class, 'defaultUpdate']);
 Route::post('/update', [AdminController::class, 'update']);
 
 Route::get('media/', [MediaController::class, "defaultMedia"]);
